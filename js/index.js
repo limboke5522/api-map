@@ -1,0 +1,1 @@
+// A simple HTML desktop framework to get you started on an application. No fancy preprocessors here—just straight HTML and CSS. Enjoy

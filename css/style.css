@@ -1,0 +1,84 @@
+html,
+body{
+  width: 100%;
+  height: 100%;
+  
+}
+
+*, *:before, *:after { 
+  box-sizing: border-box;
+}
+
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "helvetica", sans-serif;
+  font-size: 62.5%;
+
+}
+
+p{
+  font-size: 1.4em;
+}
+
+main{
+  height: 100%;
+  position: relative;
+  padding: 50px 0 0 0;
+}
+
+header[role="banner"]{
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.986);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+/* Gross, I was trying to avoid this */
+header[role="banner"]:after{
+  display:table;
+  content:'';
+  clear: both;
+}
+
+#your-logo{
+  display: block;
+  width: 180px;
+  height: inherit;
+  margin: 0;
+  float: left;
+  /* Extras */
+  background: rgb(47, 0, 255);
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  /* Absolute center text */
+  text-align: center;
+  line-height: 3.1;
+}
+
+nav{
+  float: left; 
+}
+
+
+
+aside[role="menu"]{
+  width: 180px;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  position: fixed;
+}
+
+/* Main content - flexbox */
+section[role="main"]{
+  position: relative;
+  background: #f3f3f3;
+  margin: 0 0 0 180px;
+  padding: 16px;
+}
+
