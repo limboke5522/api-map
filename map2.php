@@ -24,6 +24,8 @@
 
 </head>
 
+
+
 <body>
   
   
@@ -34,38 +36,33 @@
     <div id="map">
       
     <script>
-      var maps;
-      var position={lat: 18.795652, lng: 98.952887};
-      var jsonobj = [
-        {"location":"หอนาฬิกา","lat":"18.796485","lng":"98.953273"},
-        {"location":"โรงอาหารวิดวะ","lat":"18.795246","lng":"98.951074"},
-        {"location":"โรงเรียนสาธิต มช","lat":"18.795479","lng":"98.953949"},
-        {"location":"ที่ทำงานสุดหล่อ","lat":"18.795652","lng":"98.952887"}
-      ];
       function initMap() {
-        maps = new google.maps.Map(document.getElementById('map'), {
-          center: position,
+          var mapOptions ={
+            center: {lat: 18.795652, lng: 98.952887},
           zoom: 16,
-        });
-
-        var marker, i , info;
-       $.each(jsonobj, function(i, item){
-        marker = new google.maps.Marker({
-          position : new google.maps.LatLng(item.lat, item.lng),
-          map: maps
+          }
+          var maps = new google.maps.Map(document.getElementById('map'),mapOptions);
+          var marker, info;
+          $.getJSON("jsondata.php",function(jsonObj){
+              $.each(jsonObj, function(i, item){
+                  marker = new google.maps.Marker({
+                      position: new google.maps.LatLng(item.lat_map,item.lng_map),
+                      map: maps,
+                  });
+                  info = new google.maps.InfoWindow();
+                  google.maps.event.addListener(marker, 'click',(function(marker, i){
+                      return function(){
+                          info.setContent(item.name_map);
+                          info.open(maps,marker);
+                      }
+                  })(marker, i));
+              });
           });
-          info = new google.maps.InfoWindow();
-          google.maps.event.addListener(marker,'click',(function(marker,i){
-            return function(){
-              info.setContent(item.location);
-              info.open(maps, marker);
-            }
-          })(marker, i));
-
-       });
-         
-    
       }
+
+
+    
+      
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlPkgIjxNsgSIYPbhknlpOUfzTjrxp6w&callback=initMap"

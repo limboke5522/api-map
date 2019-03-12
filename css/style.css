@@ -14,6 +14,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
   font-family: "helvetica", sans-serif;
   font-size: 62.5%;
+  font-family: "Lato", sans-serif;
 
 }
 
@@ -50,7 +51,7 @@ header[role="banner"]:after{
   margin: 0;
   float: left;
   /* Extras */
-  background: rgb(47, 0, 255);
+  background: #00c2ea;
   color: #fff;
   font-size: 1.6em;
   font-weight: bold;
@@ -70,8 +71,11 @@ nav{
 aside[role="menu"]{
   width: 180px;
   height: 100%;
-  background: rgb(0, 0, 0);
+  background: rgb(97, 95, 95);
   position: fixed;
+  color: #fff;
+  font-size: 1.6em;
+  text-align: center;
 }
 
 /* Main content - flexbox */
@@ -82,3 +86,75 @@ section[role="main"]{
   padding: 16px;
 }
 
+.p{
+  width: 180px;
+  height: 100%;
+  background: rgb(97, 95, 95);
+  position: fixed;
+  color: #fff;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+
+.m{
+  margin-top: 50px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

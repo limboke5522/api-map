@@ -1,4 +1,4 @@
-ul {
+.q {
     float: right;
     list-style-type: none;
     margin-right: 50px;
@@ -8,13 +8,13 @@ ul {
     height: 50px;
   }
   
-  li {
+  .qq {
     float: left;
 
     
   }
   
-  li a {
+  .qqq {
     display: block;
     color: white;
     text-align: center;
@@ -25,13 +25,16 @@ ul {
   }
   
   li a:hover {
-    color: rgb(47, 0, 255);
+    color: #00c2ea;
     height: 50px;
   }
 
   .c{
- 
+    
     color: rgb(0, 0, 0);
     font-size: 40px;
   
   }
+.zz{
+  margin-top: -100px;
+}
